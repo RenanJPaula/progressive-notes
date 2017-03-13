@@ -28,12 +28,12 @@
   white-space: nowrap;
 }
 
-.btn-fab:focus {
-  outline:0;
-}
-
 .btn-fab--fixed-right {
   position: fixed;
   bottom: 1em;
   right: 1em;
+}
+
+.btn-icon:focus, .btn-fab:focus {
+  outline:0;
 }
