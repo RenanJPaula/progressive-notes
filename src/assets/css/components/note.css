@@ -10,32 +10,42 @@
   max-width: 300px;
 }
 
-.note .note-title {
+.note-title {
   margin: 0;
   padding: 1rem;
   font-size: 1.4rem;
   word-break: break-word
 }
 
-.note .note-content {
+.note-content {
+  max-height: 30vh;
+  overflow-y: auto;
   padding: 0 1.2rem 1.2rem;
 }
 
-.note .note-content p {
+.note-content p {
   line-height: 1.4rem;
   margin: 0;
   padding: 0 0 1rem;
   word-break: break-word
 }
 
-.note .note-content p:last-child {
+.note-content p:last-child {
   padding: 0;
 }
 
-.note .note-action {
+.note-action {
   position: relative;
   background-color: inherit;
   border-top: 1px solid rgba(160,160,160,0.2);
   padding: 1rem;
   text-align: end;
+}
+
+.note ::-webkit-scrollbar {
+  width: .25rem;
+}
+
+.note ::-webkit-scrollbar-thumb {
+  background: #e2e1e0;
 }
