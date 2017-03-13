@@ -1,0 +1,9 @@
+bold,
+strong {
+  font-weight: 700;
+}
+
+h1, h2 {
+  font-weight: 300;
+  line-height: 1.4;
+}

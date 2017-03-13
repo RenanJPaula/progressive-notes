@@ -1,0 +1,41 @@
+.note {
+  background: white;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 1rem;
+  position: relative;
+  vertical-align: top;
+  width: 18vw;
+  min-height: 150px;
+  max-width: 300px;
+}
+
+.note .note-title {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.4rem;
+  word-break: break-word
+}
+
+.note .note-content {
+  padding: 0 1.2rem 1.2rem;
+}
+
+.note .note-content p {
+  line-height: 1.4rem;
+  margin: 0;
+  padding: 0 0 1rem;
+  word-break: break-word
+}
+
+.note .note-content p:last-child {
+  padding: 0;
+}
+
+.note .note-action {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  padding: 1rem;
+  text-align: end;
+}

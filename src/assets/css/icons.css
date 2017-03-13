@@ -1,0 +1,17 @@
+.ic-add {
+  background-image: url('/assets/imgs/icons/ic-add.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.ic-delete {
+  background-image: url('/assets/imgs/icons/ic-delete.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.ic-edit {
+  background-image: url('/assets/imgs/icons/ic-edit.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}

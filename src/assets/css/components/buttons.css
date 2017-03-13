@@ -1,0 +1,39 @@
+.btn-icon {
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+
+  /* Hide Text */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.btn-fab {
+  background-color: #2196f3;
+  border: none;
+  border-radius: 50%;
+  color: transparent;
+  cursor: pointer;
+  height: 56px;
+  width: 56px;
+  z-index: 1;
+
+  /* Hide Text */
+  overflow: hidden;
+  text-indent: 1000%;
+  white-space: nowrap;
+}
+
+.btn-fab:focus {
+  outline:0;
+}
+
+.btn-fab--fixed-right {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}

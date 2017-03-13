@@ -1,0 +1,19 @@
+{
+  "name": "progressive-notes",
+  "version": "1.0.0",
+  "description": "Progressive Web App Study",
+  "scripts": {
+    "start": "http-server ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenanJPaula/progressive-notes.git"
+  },
+  "keywords": ["Progressive Web App Study"],
+  "author": "RenanJPaula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RenanJPaula/progressive-notes/issues"
+  },
+  "homepage": "https://github.com/RenanJPaula/progressive-notes#readme"
+}
