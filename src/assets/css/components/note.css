@@ -1,13 +1,19 @@
+.note-list {
+  display: flex;
+  flex-direction: column;
+}
+
 .note {
   background: white;
   border-radius: 2px;
-  display: inline-block;
   margin: 1rem;
   position: relative;
   vertical-align: top;
-  width: 18vw;
   min-height: 150px;
-  max-width: 300px;
+}
+
+.note:last-child {
+  margin-bottom: 80px;
 }
 
 .note-title {
@@ -18,8 +24,6 @@
 }
 
 .note-content {
-  max-height: 30vh;
-  overflow-y: auto;
   padding: 0 1.2rem 1.2rem;
 }
 
@@ -48,4 +52,21 @@
 
 .note ::-webkit-scrollbar-thumb {
   background: #e2e1e0;
+}
+
+@media (min-width:600px) {
+  .note-list {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .note {
+    width: 300px;
+  }
+
+  .note-content {
+    max-height: 30vh;
+    overflow-y: auto;
+  }
 }
