@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/assets/css/components/buttons.css">
     <link rel="stylesheet" href="/assets/css/components/note.css">
     <link rel="stylesheet" href="/assets/css/components/modal.css">
+    <link rel="stylesheet" href="/assets/css/components/form.css">
   </head>
   <body>
     <header>
@@ -57,18 +58,20 @@
         New Note
       </button>
 
-      <div class="modal">
-        <h2 class="modal-title">Teste título</h2>
+      <div class="modal modal--open">
+        <h2 class="modal-title">Note</h2>
 
         <div class="modal-content">
-          <p>
-            Eu sou um cartão muito simples.
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-            Eu sou um cartão muito simples.
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-            Eu sou um cartão muito simples.
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-          </p>
+          <form class="note-form">
+            <div class="input-field">
+              <label for="title">Title</label>
+              <input type="text" name="title" required value="">
+            </div>
+            <div class="input-field">
+              <label for="content">Title</label>
+              <textarea name="content"></textarea>
+            </div>
+          </form>
         </div>
 
         <div class="modal-actions modal-actions--end">
@@ -82,6 +85,8 @@
       </div>
 
     </main>
+
+    <div class="modal-overlay"></div>
 
     <script type="text/javascript" src="/assets/js/app.js"></script>
     <script type="text/javascript" src="/assets/js/models/note-model.js"></script>

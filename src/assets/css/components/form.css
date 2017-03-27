@@ -1,0 +1,49 @@
+.input-field {
+  margin: .8rem 0 2rem 0;
+  position: relative;
+}
+
+.input-field label {
+  color: #9e9e9e;
+  font-size: 1rem;
+  position: absolute;
+  top: .5rem;
+  transition: .2s ease-out;
+}
+
+.input-field label.active {
+  color: #2196f3;
+  font-size: .8rem;
+  -webkit-transform: translateY(-140%);
+  transform: translateY(-140%);
+}
+
+.input-field input[type=text],
+.input-field textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  border-radius: 0;
+  outline: none;
+  height: 2rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.3s;
+}
+
+.input-field textarea {
+  min-height: 2rem;
+  overflow-y: auto;
+  padding: .5rem 0 2rem 0;
+  resize: none;
+}
+
+.input-field input[type=text].valid,
+.input-field textarea.valid {
+  border-bottom: 1px solid #2196f3;
+  box-shadow: 0 1px 0 0 #2196f3;
+}

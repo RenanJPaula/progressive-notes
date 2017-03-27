@@ -44,6 +44,10 @@
   transition: background-color 0.3s;
 }
 
+.btn-flat.primary {
+  color: #2196f3;
+}
+
 .btn-flat:hover {
   background-color: rgba(0,0,0,0.1);
 }
