@@ -3,6 +3,7 @@
   const repository = {}
 
   repository.save = NoteLocalStorage.save
+  repository.delete = NoteLocalStorage.delete
   repository.getAll = NoteLocalStorage.getAll
 
   app.NoteRepository = repository
