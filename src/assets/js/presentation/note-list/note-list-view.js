@@ -40,8 +40,8 @@
   }
 
   function renderNoteCard (note) {
-    const noteNode = document.createElement('div')
-    noteNode.classList = ['note depth depth--floatable']
+    const noteNode = document.createElement('article')
+    noteNode.classList = 'note depth depth--floatable'
 
     const noteTitle = document.createElement('h1')
     noteTitle.classList = ['note-title']
@@ -55,16 +55,16 @@
     noteContent.appendChild(noteText)
 
     const noteActions = document.createElement('div')
-    noteActions.classList = ['note-action']
+    noteActions.classList = 'note-actions note-actions--end'
 
     const editButton = document.createElement('button')
-    editButton.classList = ['btn-icon ic-edit']
+    editButton.classList = 'note-action btn-icon ic-edit'
     editButton.appendChild(document.createTextNode('Edit'))
     editButton.addEventListener('click', () => onEditNote(note))
     noteActions.appendChild(editButton)
 
     const deleteButton = document.createElement('button')
-    deleteButton.classList = ['btn-icon ic-delete']
+    deleteButton.classList = 'note-action btn-icon ic-delete'
     deleteButton.appendChild(document.createTextNode('Delete'))
     deleteButton.addEventListener('click', () => onDeleteNote(note))
     noteActions.appendChild(deleteButton)

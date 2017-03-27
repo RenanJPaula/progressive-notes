@@ -30,10 +30,24 @@
 
 .btn-fab--fixed-right {
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: 1rem;
+  right: 1rem;
 }
 
-.btn-icon:focus, .btn-fab:focus {
+.btn-flat {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.btn-flat:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.btn-icon:focus, .btn-fab:focus, .btn-flat {
   outline:0;
 }
