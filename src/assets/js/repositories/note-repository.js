@@ -6,5 +6,5 @@
   repository.delete = NoteLocalStorage.delete
   repository.getAll = NoteLocalStorage.getAll
 
-  app.NoteRepository = repository
-})(window.app, window.app.NoteLocalStorage)
+  app.repositories.NoteRepository = repository
+})(window.app, window.app.repositories.NoteLocalStorage)

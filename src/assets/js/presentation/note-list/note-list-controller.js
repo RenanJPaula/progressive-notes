@@ -1,42 +1,54 @@
-;(function (NoteListPresenter, Note) {
+;(function (NoteRepository, Note, Modal) {
   'use strict'
 
-  const view = {}
-  const presenter = new NoteListPresenter(view)
-
   const mNoteList = document.getElementById('noteList')
-  const btnNewNote = document.getElementById('btnNewNote')
-
-  view.updateNoteList = (notes) => {
-    mNoteList.innerHTML = ''
-    notes.map(renderNoteCard)
-         .forEach(noteHtmlNode => mNoteList.appendChild(noteHtmlNode))
-  }
+  const mBtnNewNote = document.getElementById('btnNewNote')
+  const mModalNote = new Modal({ selector: '#modalNote' })
+  const mTxtNoteTitle = document.getElementById('txtNoteTitle')
+  const mTxtNoteContent = document.getElementById('txtNoteContent')
+  const mBtnCalcelSaveNote = document.getElementById('btnCalcelSaveNote')
+  const mBtnSaveNote = document.getElementById('btnSaveNote')
 
   function init () {
-    initNoteList()
+    updateNoteList()
     addOnNewNoteBtnClick()
   }
 
-  function initNoteList () {
-    presenter.getAll().then(view.updateNoteList)
+  function updateNoteList (notes) {
+    NoteRepository.getAll()
+      .then((notes) => {
+        mNoteList.innerHTML = ''
+        notes.map(renderNoteCard)
+        .forEach(noteHtmlNode => mNoteList.appendChild(noteHtmlNode))
+      })
   }
 
   function addOnNewNoteBtnClick () {
-    btnNewNote.addEventListener('click', () => {
-      presenter.save(new Note({
-        title: 'Teste',
-        content: 'This is a content test of Note'
-      }))
+    mBtnNewNote.addEventListener('click', () => {
+      mModalNote.open()
+      updateNoteForm(new Note())
     })
   }
 
+  function onSaveNote (note) {
+    NoteRepository.save(note)
+      .then(() => {
+        mModalNote.close()
+        updateNoteList()
+      })
+  }
+
+  function onCancelSaveNote (note) {
+    mModalNote.close()
+  }
+
   function onEditNote (note) {
-    presenter.save(note)
+    updateNoteForm(note)
+    mModalNote.open()
   }
 
   function onDeleteNote (note) {
-    presenter.delete(note)
+    console.log('delete')
   }
 
   function renderNoteCard (note) {
@@ -76,5 +88,18 @@
     return noteNode
   }
 
+  function updateNoteForm (note) {
+    mTxtNoteTitle.value = note.title
+    mTxtNoteContent.value = note.content
+    mBtnSaveNote.onclick = () => {
+      note.title = mTxtNoteTitle.value
+      note.content = mTxtNoteContent.value
+      onSaveNote(note)
+    }
+    mBtnCalcelSaveNote.onclick = () => onCancelSaveNote(note)
+  }
+
   init()
-})(window.app.NoteListPresenter, window.app.Note)
+})(window.app.repositories.NoteRepository,
+   window.app.models.Note,
+   window.app.components.Modal)

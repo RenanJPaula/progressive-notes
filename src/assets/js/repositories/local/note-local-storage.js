@@ -1,15 +1,17 @@
-;(function (app, NoteLocalStorage) {
+;(function (app, Note) {
   'use strict'
   const storage = {}
 
   // mock
-  const _notes = [new app.Note({
+  const _notes = [new Note({
     title: 'Fake note!',
     content: 'Its just a test!'
   })]
 
   storage.save = (note) => {
-    _notes.push(note)
+    if (_notes.indexOf(note) === -1) {
+      _notes.push(note)
+    }
     return Promise.resolve(note)
   }
 
@@ -24,5 +26,5 @@
 
   storage.getAll = () => Promise.resolve(_notes)
 
-  app.NoteLocalStorage = storage
-})(window.app)
+  app.repositories.NoteLocalStorage = storage
+})(window.app, window.app.models.Note)

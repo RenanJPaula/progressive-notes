@@ -58,27 +58,27 @@
         New Note
       </button>
 
-      <div class="modal modal--open">
+      <div id="modalNote" class="modal">
         <h2 class="modal-title">Note</h2>
 
         <div class="modal-content">
           <form class="note-form">
             <div class="input-field">
               <label for="title">Title</label>
-              <input type="text" name="title" required value="">
+              <input type="text" id="txtNoteTitle" name="title" required value="">
             </div>
             <div class="input-field">
               <label for="content">Title</label>
-              <textarea name="content" style="min-height: 10rem;"></textarea>
+              <textarea id="txtNoteContent" name="content" style="min-height: 10rem;"></textarea>
             </div>
           </form>
         </div>
 
         <div class="modal-actions modal-actions--end">
-          <button type="button" class="modal-action btn-flat" name="button">
+          <button type="button" id="btnCalcelSaveNote" class="modal-action btn-flat" name="button">
             Cancel
           </button>
-          <button type="button" class="modal-action btn-flat primary" name="button">
+          <button type="button" id="btnSaveNote" class="modal-action btn-flat primary" name="button">
             Ok
           </button>
         </div>
@@ -86,16 +86,14 @@
 
     </main>
 
-    <div class="modal-overlay"></div>
-
     <script type="text/javascript" src="/assets/js/app.js"></script>
     <script type="text/javascript" src="/assets/js/models/note-model.js"></script>
 
     <script type="text/javascript" src="/assets/js/repositories/local/note-local-storage.js"></script>
     <script type="text/javascript" src="/assets/js/repositories/note-repository.js"></script>
 
-    <script type="text/javascript" src="/assets/js/presentation/note-list/note-list-presenter.js"></script>
-    <script type="text/javascript" src="/assets/js/presentation/note-list/note-list-view.js"></script>
+    <script type="text/javascript" src="/assets/js/presentation/components/modal.js"></script>
 
+    <script type="text/javascript" src="/assets/js/presentation/note-list/note-list-controller.js"></script>
   </body>
 </html>

@@ -3,12 +3,12 @@
 
   class Note {
     constructor (attrs) {
-      if (attrs) {
-        this.title = attrs.title || null
-        this.content = attrs.content || null
-      }
+      if (!attrs) attrs = {}
+
+      this.title = attrs.title || ''
+      this.content = attrs.content || ''
     }
   }
 
-  app.Note = Note
+  app.models.Note = Note
 }(window.app))
