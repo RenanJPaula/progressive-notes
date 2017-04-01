@@ -25,11 +25,13 @@
     open () {
       this._modal.classList.add(MODAL_SHOW_CLASS)
       body.appendChild(this._overlay)
+      body.style.overflow = 'hidden'
     }
 
     close () {
       this._modal.classList.remove(MODAL_SHOW_CLASS)
       body.removeChild(this._overlay)
+      body.style.overflow = 'auto'
     }
   }
 

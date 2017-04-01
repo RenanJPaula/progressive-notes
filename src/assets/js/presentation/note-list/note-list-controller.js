@@ -8,6 +8,9 @@
   const mTxtNoteContent = document.getElementById('txtNoteContent')
   const mBtnCalcelSaveNote = document.getElementById('btnCalcelSaveNote')
   const mBtnSaveNote = document.getElementById('btnSaveNote')
+  const mModalConfirmDelete = new Modal({ selector: '#modalConfirmDelete' })
+  const mBtnCalcelDelete = document.getElementById('btnCalcelDelete')
+  const mBtnConfirmDelete = document.getElementById('btnConfirmDelete')
 
   function init () {
     updateNoteList()
@@ -48,7 +51,13 @@
   }
 
   function onDeleteNote (note) {
-    console.log('delete')
+    mModalConfirmDelete.open()
+    mBtnConfirmDelete.onclick = () => {
+      NoteRepository.delete(note)
+      updateNoteList()
+      mModalConfirmDelete.close()
+    }
+    mBtnCalcelDelete.onclick = () => mModalConfirmDelete.close()
   }
 
   function renderNoteCard (note) {
@@ -63,7 +72,7 @@
     noteContent.classList = ['note-content']
 
     const noteText = document.createElement('p')
-    noteText.appendChild(document.createTextNode(note.content))
+    noteText.appendChild(document.createTextNode(note.content.replace('/n', '<br>')))
     noteContent.appendChild(noteText)
 
     const noteActions = document.createElement('div')

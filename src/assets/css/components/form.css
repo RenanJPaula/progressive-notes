@@ -8,10 +8,10 @@
   font-size: 1rem;
   position: absolute;
   top: .5rem;
-  transition: .2s ease-out;
+  transition: .3s ease-out;
 }
 
-.input-field label.active {
+.input-field label.float {
   color: #2196f3;
   font-size: .8rem;
   -webkit-transform: translateY(-140%);

@@ -31,28 +31,25 @@
 
     <main>
       <section id="noteList" class="note-list">
-
-        <article class="note depth depth--floatable">
-          <h2 class="note-title">Teste título</h2>
-
-          <div class="note-content">
-            <p>
-              Eu sou um cartão muito simples.
-              Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
-            </p>
-          </div>
-
-          <div class="note-actions note-actions--end">
-            <button type="button" class="note-action btn-icon ic-edit" name="button">
-              Edit
-            </button>
-            <button type="button" class="note-action btn-icon ic-delete" name="button">
-              Delete
-            </button>
-          </div>
-        </article>
-
+        <!-- Notes here! -->
       </section>
+
+      <div id="modalConfirmDelete" class="modal">
+        <h2 class="modal-title">Confirmation</h2>
+
+        <div class="modal-content">
+          <p>Are you sure you want to delete this note?</p>
+        </div>
+
+        <div class="modal-actions modal-actions--end">
+          <button type="button" id="btnCalcelDelete" class="modal-action btn-flat" name="button">
+            Cancel
+          </button>
+          <button type="button" id="btnConfirmDelete" class="modal-action btn-flat primary" name="button">
+            Ok
+          </button>
+        </div>
+      </div>
 
       <button type="button" id="btnNewNote" class="btn-fab btn-fab--fixed-right depth depth--floatable primary ic-add" name="newNote">
         New Note
@@ -68,8 +65,8 @@
               <input type="text" id="txtNoteTitle" name="title" required value="">
             </div>
             <div class="input-field">
-              <label for="content">Title</label>
-              <textarea id="txtNoteContent" name="content" style="min-height: 10rem;"></textarea>
+              <label for="content">Content</label>
+              <textarea id="txtNoteContent" name="content" style="min-height: 15rem;"></textarea>
             </div>
           </form>
         </div>
@@ -86,12 +83,15 @@
 
     </main>
 
+    <script type="text/javascript" src="/vendors/js/polyfill/object.watch.js"></script>
+
     <script type="text/javascript" src="/assets/js/app.js"></script>
     <script type="text/javascript" src="/assets/js/models/note-model.js"></script>
 
     <script type="text/javascript" src="/assets/js/repositories/local/note-local-storage.js"></script>
     <script type="text/javascript" src="/assets/js/repositories/note-repository.js"></script>
 
+    <script type="text/javascript" src="/assets/js/presentation/components/floating-labels.js"></script>
     <script type="text/javascript" src="/assets/js/presentation/components/modal.js"></script>
 
     <script type="text/javascript" src="/assets/js/presentation/note-list/note-list-controller.js"></script>
