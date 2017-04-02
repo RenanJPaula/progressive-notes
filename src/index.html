@@ -9,18 +9,20 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto'>
 
-    <link rel='stylesheet' href='/vendors/css/normalize.css'>
+    <!-- build:css css/app.css -->
+      <link rel='stylesheet' href='/vendors/css/normalize.css'>
 
-    <link rel="stylesheet" href="/assets/css/commmons.css">
-    <link rel="stylesheet" href="/assets/css/typography.css">
-    <link rel="stylesheet" href="/assets/css/icons.css">
+      <link rel="stylesheet" href="/assets/css/commmons.css">
+      <link rel="stylesheet" href="/assets/css/typography.css">
+      <link rel="stylesheet" href="/assets/css/icons.css">
 
-    <link rel="stylesheet" href="/assets/css/components/header.css">
-    <link rel="stylesheet" href="/assets/css/components/depth.css">
-    <link rel="stylesheet" href="/assets/css/components/buttons.css">
-    <link rel="stylesheet" href="/assets/css/components/note.css">
-    <link rel="stylesheet" href="/assets/css/components/modal.css">
-    <link rel="stylesheet" href="/assets/css/components/form.css">
+      <link rel="stylesheet" href="/assets/css/components/header.css">
+      <link rel="stylesheet" href="/assets/css/components/depth.css">
+      <link rel="stylesheet" href="/assets/css/components/buttons.css">
+      <link rel="stylesheet" href="/assets/css/components/note.css">
+      <link rel="stylesheet" href="/assets/css/components/modal.css">
+      <link rel="stylesheet" href="/assets/css/components/form.css">
+    <!-- endbuild -->
   </head>
   <body>
     <header>
@@ -80,20 +82,19 @@
           </button>
         </div>
       </div>
-
     </main>
 
-    <script type="text/javascript" src="/vendors/js/polyfill/object.watch.js"></script>
+    <!-- build:js js/app.js -->
+      <script type="text/javascript" src="/assets/js/app.js"></script>
+      <script type="text/javascript" src="/assets/js/models/note-model.js"></script>
 
-    <script type="text/javascript" src="/assets/js/app.js"></script>
-    <script type="text/javascript" src="/assets/js/models/note-model.js"></script>
+      <script type="text/javascript" src="/assets/js/repositories/local/note-local-storage.js"></script>
+      <script type="text/javascript" src="/assets/js/repositories/note-repository.js"></script>
 
-    <script type="text/javascript" src="/assets/js/repositories/local/note-local-storage.js"></script>
-    <script type="text/javascript" src="/assets/js/repositories/note-repository.js"></script>
+      <script type="text/javascript" src="/assets/js/presentation/components/floating-labels.js"></script>
+      <script type="text/javascript" src="/assets/js/presentation/components/modal.js"></script>
 
-    <script type="text/javascript" src="/assets/js/presentation/components/floating-labels.js"></script>
-    <script type="text/javascript" src="/assets/js/presentation/components/modal.js"></script>
-
-    <script type="text/javascript" src="/assets/js/presentation/note-list/note-list-controller.js"></script>
+      <script type="text/javascript" src="/assets/js/presentation/note-list/note-list-controller.js"></script>
+    <!-- endbuild -->
   </body>
 </html>

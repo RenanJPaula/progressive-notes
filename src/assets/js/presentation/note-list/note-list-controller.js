@@ -72,7 +72,7 @@
     noteContent.classList = ['note-content']
 
     const noteText = document.createElement('p')
-    noteText.appendChild(document.createTextNode(note.content.replace('/n', '<br>')))
+    noteText.innerHTML = note.content.replace(/\n/g, '<br>')
     noteContent.appendChild(noteText)
 
     const noteActions = document.createElement('div')
