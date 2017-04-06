@@ -1,4 +1,4 @@
-;(function (NoteRepository, Note, Modal, NoteItem) {
+;(function (NoteRepository, Note, Modal, NoteCard) {
   'use strict'
 
   const mNoteList = document.getElementById('noteList')
@@ -61,10 +61,10 @@
   }
 
   function renderNoteCard (note) {
-    const noteItem = new NoteItem(note)
-    noteItem.onEditNoteListener(onEditNote)
-    noteItem.onDeleteNoteListener(onDeleteNote)
-    return noteItem.render()
+    const noteCard = new NoteCard(note)
+    noteCard.onEditNoteListener(onEditNote)
+    noteCard.onDeleteNoteListener(onDeleteNote)
+    return noteCard.render()
   }
 
   function updateNoteForm (note) {
