@@ -1,4 +1,4 @@
-;(function (NoteRepository, Note, Modal) {
+;(function (NoteRepository, Note, Modal, NoteItem) {
   'use strict'
 
   const mNoteList = document.getElementById('noteList')
@@ -22,7 +22,7 @@
       .then((notes) => {
         mNoteList.innerHTML = ''
         notes.map(renderNoteCard)
-        .forEach(noteHtmlNode => mNoteList.appendChild(noteHtmlNode))
+             .forEach(noteHtmlNode => mNoteList.appendChild(noteHtmlNode))
       })
   }
 
@@ -61,40 +61,10 @@
   }
 
   function renderNoteCard (note) {
-    const noteNode = document.createElement('article')
-    noteNode.classList = 'note depth depth--floatable'
-
-    const noteTitle = document.createElement('h1')
-    noteTitle.classList = ['note-title']
-    noteTitle.appendChild(document.createTextNode(note.title))
-
-    const noteContent = document.createElement('div')
-    noteContent.classList = ['note-content']
-
-    const noteText = document.createElement('p')
-    noteText.innerHTML = note.content.replace(/\n/g, '<br>')
-    noteContent.appendChild(noteText)
-
-    const noteActions = document.createElement('div')
-    noteActions.classList = 'note-actions note-actions--end'
-
-    const editButton = document.createElement('button')
-    editButton.classList = 'note-action btn-icon ic-edit'
-    editButton.appendChild(document.createTextNode('Edit'))
-    editButton.addEventListener('click', () => onEditNote(note))
-    noteActions.appendChild(editButton)
-
-    const deleteButton = document.createElement('button')
-    deleteButton.classList = 'note-action btn-icon ic-delete'
-    deleteButton.appendChild(document.createTextNode('Delete'))
-    deleteButton.addEventListener('click', () => onDeleteNote(note))
-    noteActions.appendChild(deleteButton)
-
-    noteNode.appendChild(noteTitle)
-    noteNode.appendChild(noteContent)
-    noteNode.appendChild(noteActions)
-
-    return noteNode
+    const noteItem = new NoteItem(note)
+    noteItem.onEditNoteListener(onEditNote)
+    noteItem.onDeleteNoteListener(onDeleteNote)
+    return noteItem.render()
   }
 
   function updateNoteForm (note) {
@@ -111,4 +81,5 @@
   init()
 })(window.app.repositories.NoteRepository,
    window.app.models.Note,
-   window.app.components.Modal)
+   window.app.components.Modal,
+   window.app.components.NoteCard)
