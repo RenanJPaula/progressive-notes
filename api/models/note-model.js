@@ -7,7 +7,7 @@ notes.getAll = () => {
   return new Promise((resolve, reject) => {
     const _query = {}
 
-    db.find(_query, (err, docs) => {
+    db.notes.find(_query, (err, docs) => {
       if (err) return reject(err)
       return resolve(docs)
     })
@@ -16,7 +16,7 @@ notes.getAll = () => {
 
 notes.save = (notes) => {
   return new Promise((resolve, reject) => {
-    db.insert(notes, (err, result) => {
+    db.notes.insert(notes, (err, result) => {
       if (err) return reject(err)
       return resolve(result)
     })
