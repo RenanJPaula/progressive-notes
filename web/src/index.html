@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="offline.manifest">
   <head>
     <link rel="manifest" href="app.manifest">
     <link rel="icon" type="image/x-icon" href="/assets/imgs/favicon.ico" />
@@ -10,7 +10,7 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto'>
 
-    <!-- build:css css/app.css -->
+    <!-- build:css assets/css/app.css -->
       <link rel='stylesheet' href='/vendors/css/normalize.css'>
 
       <link rel="stylesheet" href="/assets/css/commmons.css">
@@ -85,7 +85,8 @@
       </div>
     </main>
 
-    <!-- build:js js/app.js -->
+    <!-- build:js assets/js/app.js -->
+      <script type="text/javascript" src="/assets/js/service-workers/config/service-workers-config.js"></script>
       <script type="text/javascript" src="/assets/js/app.js"></script>
       <script type="text/javascript" src="/assets/js/models/note-model.js"></script>
 

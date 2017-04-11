@@ -1,0 +1,15 @@
+CACHE MANIFEST
+
+# version 1.0.0
+
+CACHE:
+/app.manifest
+/assets/css/app.css
+/assets/js/app.js
+/assets/imgs/favicon.ico
+/assets/imgs/icons/ic-add.svg
+/assets/imgs/icons/ic-delete.svg
+/assets/imgs/icons/ic-edit.svg
+
+NETWORK:
+*
