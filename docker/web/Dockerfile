@@ -9,4 +9,5 @@ RUN npm install pm2@latest -g
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
 
-CMD /run.sh
+ENTRYPOINT [ "/bin/sh" ]
+CMD [ "run.sh" ]
