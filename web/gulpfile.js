@@ -8,6 +8,7 @@ const gulpif = require('gulp-if')
 const uglify = require('gulp-uglify')
 const minifyCss = require('gulp-clean-css')
 const runSequence = require('run-sequence')
+const env = require('./env')
 
 gulp.task('clean', () => {
   return gulp.src('build')
@@ -17,9 +18,9 @@ gulp.task('clean', () => {
 gulp.task('html', () => {
   return gulp.src('src/*.html')
         .pipe(useref())
-        .pipe(gulpif('*.css', minifyCss()))
-        .pipe(gulpif('*.js', babel({ presets: ['es2015'] })))
-        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif(env.isProduction, gulpif('*.css', minifyCss())))
+        .pipe(gulpif(env.isProduction, gulpif('*.js', babel({ presets: ['es2015'] }))))
+        .pipe(gulpif(env.isProduction, gulpif('*.js', uglify())))
         .pipe(gulp.dest('build'))
 })
 

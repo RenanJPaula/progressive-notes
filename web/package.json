@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Progressive Web App Study",
   "scripts": {
-    "prestart": "gulp build",
-    "start": "node ./server.js"
+    "prestart": "npm install && gulp build",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/RenanJPaula/progressive-notes#readme",
   "dependencies": {
+    "compression": "^1.6.2",
     "express": "^4.15.2"
   },
   "devDependencies": {
