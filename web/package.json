@@ -21,9 +21,7 @@
   "homepage": "https://github.com/RenanJPaula/progressive-notes#readme",
   "dependencies": {
     "compression": "^1.6.2",
-    "express": "^4.15.2"
-  },
-  "devDependencies": {
+    "express": "^4.15.2",
     "babel-preset-es2015": "^6.24.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
