@@ -7,6 +7,7 @@
     const label = inputField.querySelector('label')
     const input = inputField.querySelector('input') || inputField.querySelector('textarea')
 
+    input.addEventListener('input', update)
     input.addEventListener('keydown', update)
     input.addEventListener('keyup', update)
     input.addEventListener('focus', update)
